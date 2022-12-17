@@ -118,7 +118,25 @@ class CpuStrums extends Option
 	}
 
 }
+class AndroidControls extends Option
+{
+	public function new()
+	{
+		super();
+	}
 
+	public override function press():Bool
+	{
+		trace("switch");
+		FlxG.switchState(new android.AndroidControlsMenu());
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return "Android Controls";
+	}
+}
 class DownscrollOption extends Option
 {
 	public function new(desc:String)
